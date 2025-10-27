@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import ProductCard from "../components/ProductCard"; // // Importa el componente que muestra cada producto individual
 import { obtenerRascadores } from "../data/rascadoresData"; // // Importa la función que retorna los productos (rascadores)
@@ -18,6 +19,20 @@ export default function Ofertas(){
             onVerDetalle={() => {}} // // Prop vacía (sin acción de detalle en esta vista)
           />
         ))}
+=======
+// src/pages/Ofertas.jsx
+import React from "react";
+import ProductCard from "../components/ProductCard";
+import { obtenerRascadores } from "../data/rascadoresData";
+
+export default function Ofertas(){
+  const productos = obtenerRascadores().filter(p=>p.oferta);
+  return (
+    <div className="container mt-4">
+      <h2>Ofertas</h2>
+      <div className="row mt-3 g-3">
+        {productos.map(p => <ProductCard key={p.id} producto={p} onVerDetalle={()=>{}} />)}
+>>>>>>> c309a6e84d (cat shop test)
       </div>
     </div>
   );

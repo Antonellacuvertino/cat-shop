@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Importamos React y el hook useEffect desde la librería 'react'
 import React, { useEffect } from "react";
 
@@ -79,6 +80,44 @@ export default function ModalDetalle({ producto, onClose }) {
                   <button className="btn btn-outline-secondary" data-bs-dismiss="modal">
                     Cerrar
                   </button>
+=======
+// src/components/ModalDetalle.jsx
+import React, { useEffect } from "react";
+
+export default function ModalDetalle({ producto, onClose }){
+  useEffect(()=> {
+    const modal = new window.bootstrap.Modal(document.getElementById('modalDetalle'));
+    modal.show();
+    const el = document.getElementById('modalDetalle');
+    el.addEventListener('hidden.bs.modal', onClose, { once: true });
+    return () => {
+      el.removeEventListener('hidden.bs.modal', onClose);
+      modal.hide();
+    };
+  }, [producto, onClose]);
+
+  if(!producto) return null;
+
+  return (
+    <div className="modal fade" id="modalDetalle" tabIndex="-1" aria-hidden="true">
+      <div className="modal-dialog modal-dialog-centered modal-lg">
+        <div className="modal-content">
+          <div className="modal-body p-0">
+            <div className="row g-0">
+              <div className="col-md-6">
+                <div style={{overflow:'hidden'}}>
+                  <img src={producto.imagen || "/img/placeholder.jpg"} alt={producto.nombre} className="w-100" style={{objectFit:'cover', height: '100%'}}/>
+                </div>
+              </div>
+              <div className="col-md-6 p-4">
+                <h4>{producto.nombre}</h4>
+                <p className="text-muted">{producto.categoria}</p>
+                <p><strong>${producto.precio.toLocaleString()}</strong></p>
+                <p>{producto.descripcion || 'Rascador premium de alta calidad.'}</p>
+                <div className="d-flex gap-2">
+                  <button className="btn btn-primary">Agregar al carrito</button>
+                  <button className="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+>>>>>>> c309a6e84d (cat shop test)
                 </div>
               </div>
             </div>

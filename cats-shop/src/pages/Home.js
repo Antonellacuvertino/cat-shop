@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { Link } from "react-router-dom"; // // Importa componente Link para navegar entre páginas sin recargar
 
@@ -25,6 +26,30 @@ export default function Home(){
           <div className="center-cta">
             <Link to="/tienda" className="btn btn-warning btn-lg">🛒 Explorar la tienda</Link> {/* // Enlace a la tienda */}
             <Link to="/ofertas" className="btn btn-outline-secondary btn-lg">Ver ofertas</Link> {/* // Enlace a las ofertas */}
+=======
+// src/pages/Home.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+
+export default function Home(){
+  return (
+    <main>
+      <section className="hero">
+        <div className="container">
+        <h1 className="fw-bold">Bienvenido a cats-shop</h1>
+        <Link to="/tienda" className="btn btn-warning btn-lg">Explorar la tienda</Link>
+
+          <p>
+            Diseños elegantes, materiales duraderos y comodidad superior.
+            Encuentra el rascador perfecto para tu peludo.
+          </p>
+
+          <img src="/img/gato-portada.jpg" alt="gato" style={{width: 420, borderRadius: 12}} className="my-4" />
+
+          <div className="center-cta">
+            <Link to="/tienda" className="btn btn-warning btn-lg">🛒 Explorar la tienda</Link>
+            <Link to="/ofertas" className="btn btn-outline-secondary btn-lg">Ver ofertas</Link>
+>>>>>>> c309a6e84d (cat shop test)
           </div>
         </div>
       </section>

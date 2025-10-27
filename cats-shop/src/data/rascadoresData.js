@@ -1,6 +1,9 @@
 // src/data/rascadoresData.js
+<<<<<<< HEAD
 
 // Declaramos un arreglo inicial con varios objetos que representan los rascadores
+=======
+>>>>>>> c309a6e84d (cat shop test)
 let rascadores = [
   { id:1, nombre:"Rascador Torre Deluxe", precio:49990, categoria:"torre", stock:5, oferta:true, imagen:"/img/torre1.jpg", descripcion:"Torre grande con plataforma y sisal." },
   { id:2, nombre:"Rascador de Pared Slim", precio:19990, categoria:"pared", stock:10, oferta:false, imagen:"/img/pared1.jpg", descripcion:"Ideal para espacios reducidos." },
@@ -8,6 +11,7 @@ let rascadores = [
   { id:4, nombre:"Rascador Minimal Tree", precio:79990, categoria:"arbol", stock:3, oferta:true, imagen:"/img/rascador-4.jpg", descripcion:"Árbol moderno con hamaca y plataforma." }
 ];
 
+<<<<<<< HEAD
 // Función que devuelve el arreglo actual de rascadores
 export const obtenerRascadores = () => rascadores;
 
@@ -30,4 +34,10 @@ export const eliminarRascador = (id) => {
 };
 
 // Exportamos el arreglo por defecto
+=======
+export const obtenerRascadores = () => rascadores;
+export const agregarRascador = (p) => { p.id = Date.now(); rascadores.push(p); };
+export const actualizarRascador = (id, patch) => { rascadores = rascadores.map(x => x.id===id?{...x,...patch}:x); };
+export const eliminarRascador = (id) => { rascadores = rascadores.filter(x => x.id !== id); };
+>>>>>>> c309a6e84d (cat shop test)
 export default rascadores;

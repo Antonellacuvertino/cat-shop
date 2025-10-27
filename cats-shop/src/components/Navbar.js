@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Importamos React para poder usar JSX y definir componentes
 import React from "react";
 
@@ -38,10 +39,33 @@ export default function Navbar() {
                   src="/img/logo.png"       // Ruta del logo
                   alt="cats-shop"           // Texto alternativo (importante para accesibilidad)
                   style={{ height: "50px" }} // Altura del logo
+=======
+import React from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext"; // ✅ para mostrar contador
+
+export default function Navbar() {
+  const { cart } = useCart(); // ✅ obtenemos el carrito
+  const totalItems = cart.reduce((acc, item) => acc + item.cantidad, 0);
+
+  return (
+    <header className="navbar-white">
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <div className="container-fluid">
+            <div className="mx-auto order-0 text-center">
+              {/* ✅ Logo centrado */}
+              <Link className="navbar-brand fw-bold" to="/">
+                <img
+                  src="/img/logo.png"
+                  alt="cats-shop"
+                  style={{ height: "45px" }}
+>>>>>>> c309a6e84d (cat shop test)
                 />
               </Link>
             </div>
 
+<<<<<<< HEAD
             {/* ==================== MENÚ PRINCIPAL ==================== */}
             {/* Se colapsa en pantallas pequeñas (usando Bootstrap) */}
             <div className="collapse navbar-collapse order-1" id="navMenu">
@@ -78,6 +102,30 @@ export default function Navbar() {
                   <Link className="nav-link" to="/carrito">
                     🛒
                     {/* Si hay productos en el carrito, mostramos un contador (badge rojo) */}
+=======
+            <div className="collapse navbar-collapse order-1" id="navMenu">
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/tienda">
+                    Tienda
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/categorias">
+                    Categorías
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/ofertas">
+                    Ofertas
+                  </Link>
+                </li>
+
+                {/* ✅ Carrito con contador */}
+                <li className="nav-item">
+                  <Link className="nav-link position-relative" to="/carrito">
+                    🛒
+>>>>>>> c309a6e84d (cat shop test)
                     {totalItems > 0 && (
                       <span className="badge bg-danger position-absolute top-0 start-100 translate-middle">
                         {totalItems}
