@@ -20,4 +20,6 @@ se agrego esta dependencia para poder visualizar los test
 <img width="431" height="201" alt="image" src="https://github.com/user-attachments/assets/6569fd5c-faf7-4d1a-bce6-c2779b71f65e" />
 hacemos correr npm run test para comprobar que estos esten funcionales 
 <img width="1377" height="682" alt="image" src="https://github.com/user-attachments/assets/38b51b56-2218-46cf-8c3f-412bd6bf9c2d" />
-
+verifico que mis funcionalidades de mi aplicacion este funcional gracias a los test 
+se deberia de desplegar el navegador con los test aprobados 
+<img width="1500" height="608" alt="Captura de pantalla 2025-10-27 142220" src="https://github.com/user-attachments/assets/e64ba5cb-0a7e-4670-b412-349660a8d5c1" />
